@@ -1,12 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter} from 'react-router-dom';
 import AppWeather from './components/appWeather';
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
       <AppWeather />
-    </div>
+    </BrowserRouter>
   );
 }
 

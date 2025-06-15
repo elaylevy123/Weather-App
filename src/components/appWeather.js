@@ -10,7 +10,7 @@ export default function AppWeather() {
 
   useEffect(() => {
     doApi(query.get("q"))
-  },[]);
+  },[query]);
 
   const doApi = async(_town) => {
     let url = `http://api.openweathermap.org/data/2.5/weather?q=${_town}&APPID=333bfa4905ca5f50692d239f449ef45b&units=metric`;
