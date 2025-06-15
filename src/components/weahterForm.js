@@ -1,12 +1,14 @@
 import React, { useRef } from 'react'
+import {useNavigate} from 'react-router-dom'
 
 
 export default function WeahterForm(props) {
-
+  const nav = useNavigate();
   const inputRef = useRef();
 
   const onSearchClick = () => {
-    props.doApi(inputRef.current.value);
+    nav("/?q=" +inputRef.current.value)
+  //  props.doApi(inputRef.current.value);
   }
 
   return (

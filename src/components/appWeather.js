@@ -1,12 +1,15 @@
 import React,{ useEffect, useState } from 'react';
 import axios from 'axios';
+import { useSearchParams } from 'react-router-dom'
 import WeahterForm from './weahterForm'
 import WeatherInfo from './weatherInfo'
 
 export default function AppWeather() {
   let [info,setInfo] = useState({});
+  const[query] = useSearchParams();
+
   useEffect(() => {
-    doApi("jerusalem")
+    doApi(query.get("q"))
   },[]);
 
   const doApi = async(_town) => {
