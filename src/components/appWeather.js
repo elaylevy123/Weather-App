@@ -7,7 +7,7 @@ import WeatherInfo from './weatherInfo'
 export default function AppWeather() {
   let [info,setInfo] = useState({});
   const[query] = useSearchParams();
-  let [errorMsg, setErrorMsg] = useState(""); // ⬅ משתנה שגיאה חדש
+  let [errorMsg, setErrorMsg] = useState("");
 
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function AppWeather() {
     try {
       const resp = await axios.get(url);
       setInfo(resp.data);
-      setErrorMsg(""); // הצליח? ננקה שגיאה
+      setErrorMsg("");
     } catch (err) {
       console.error("API Error:", err);
       if (err.response && err.response.status === 404) {
